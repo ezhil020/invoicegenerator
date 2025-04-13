@@ -113,13 +113,16 @@ The application uses jsPDF with autotable for generating professional PDF invoic
 - Responsive design patterns
 - Shadcn UI components integration
 BACKEND
-📦 Invoice Generator – Backend
-This is the backend of the Invoice Generator application built with Node.js, Express, and MongoDB. It handles invoice creation, retrieval, and storage using a simple REST API.
 
-📁 Folder Structure
-bash
-Copy
-Edit
+---
+
+# 📦 Invoice pro – Backend
+
+This is the backend of the **Invoice pro** application built with **Node.js**, **Express**, and **MongoDB**. It handles invoice creation, retrieval, and storage using a simple REST API.
+
+## 📁 Folder Structure
+
+```
 /server
 ├── models/
 │   ├── Invoice.js        # Mongoose model for invoice data
@@ -127,73 +130,70 @@ Edit
 ├── routes/
 │   └── invoiceRoutes.js  # API routes for handling invoice operations
 ├── server.js             # Entry point of the backend application
-🚀 Features
-Create and save invoices with dynamic pricing
+```
 
-Automatically assign unique, incrementing invoice numbers
+## 🚀 Features
 
-Apply tax and discount calculations
+- Create and save invoices with dynamic pricing
+- Automatically assign unique, incrementing invoice numbers
+- Apply tax and discount calculations
+- Retrieve all saved invoices (used for invoice history view)
+- Connects to MongoDB for persistent storage
 
-Retrieve all saved invoices (used for invoice history view)
+## 📦 Tech Stack
 
-Connects to MongoDB for persistent storage
+- **Node.js** + **Express** – Server and API
+- **MongoDB** + **Mongoose** – Database and schema modeling
+- **CORS** – For cross-origin communication with the frontend
 
-📦 Tech Stack
-Node.js + Express – Server and API
+## 🔌 API Endpoints
 
-MongoDB + Mongoose – Database and schema modeling
+| Method | Endpoint         | Description                      |
+|--------|------------------|----------------------------------|
+| POST   | `/api/invoices`  | Create and save a new invoice    |
+| GET    | `/api/invoices`  | Retrieve all saved invoices      |
 
-CORS – For cross-origin communication with the frontend
+## ⚙️ Setup Instructions
 
-🔌 API Endpoints
-Method	Endpoint	Description
-POST	/api/invoices	Create and save a new invoice
-GET	/api/invoices	Retrieve all saved invoices
-⚙️ Setup Instructions
-Navigate to the server folder:
+1. **Navigate to the server folder:**
+   ```bash
+   cd server
+   ```
 
-bash
-Copy
-Edit
-cd server
-Install dependencies:
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-bash
-Copy
-Edit
-npm install
-Create a .env file and add your MongoDB URI:
+3. **Create a `.env` file and add your MongoDB URI:**
+   ```
+   MONGO_URI=your_mongodb_connection_string
+   ```
 
-ini
-Copy
-Edit
-MONGO_URI=your_mongodb_connection_string
-Run the server:
+4. **Run the server:**
+   ```bash
+   npm start
+   ```
 
-bash
-Copy
-Edit
-npm start
-The server will run on http://localhost:5000 by default.
+   The server will run on `http://localhost:5000` by default.
 
-📝 Models
-Invoice.js
+## 📝 Models
+
+### `Invoice.js`
+
 Defines the structure of each invoice document, including:
+- `invoiceNumber`
+- `clientName`
+- `items` (array with description, quantity, and price)
+- `tax`, `discount`, `totalAmount`
+- `date`
 
-invoiceNumber
+### `Counter.js`
 
-clientName
-
-items (array with description, quantity, and price)
-
-tax, discount, totalAmount
-
-date
-
-Counter.js
 A helper model to track and auto-increment invoice numbers.
 
-🛠️ Notes
-Be sure to start MongoDB locally or use a cloud DB (like MongoDB Atlas).
+## 🛠️ Notes
 
-This backend is meant to be used with the Invoice Generator Frontend.
+- Be sure to start MongoDB locally or use a cloud DB (like MongoDB Atlas).
+
+---
