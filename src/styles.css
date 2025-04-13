@@ -1,0 +1,52 @@
+.app {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  input, button {
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+  }
+  
+  .invoice-preview {
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #f9f9f9;
+  }
+  
+  .invoice-preview ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .table-auto {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-auto th, .table-auto td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  h1, h2, h3 {
+    font-weight: bold;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  @tailwind base;
+@tailwind components;
+@tailwind utilities;
